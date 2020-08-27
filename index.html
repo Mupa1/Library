@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-  <script src="./index.js"></script>
-</body>
+  <body>
+    <form>
+      <label for="title">Title</label><br />
+      <input type="text" name="title" id="title" /><br />
+      <label for="author">Author</label><br />
+      <input type="text" name="author" id="author" /><br />
+      <label for="numPages">Pages</label><br />
+      <input type="number" name="numPages" id="numPages" /><br />
+      <label for="readStatus">Already Read</label>
+      <input type="checkbox" name="readStatus" id="readStatus" /><br />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <div id="msg">
+      <pre></pre>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
