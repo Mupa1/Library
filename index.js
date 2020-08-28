@@ -22,7 +22,7 @@ function displayBook(book) {
   <td>${book.title}</td>
   <td>${book.author}</td>
   <td>${book.numPages}</td>
-  <td>${book.readStatus}</td>
+  <td>${book.readStatus}<a href="#" class="btn btn-danger btn-sm ml-4 delete">Change Status</a></td>
   <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
   `;
   list.appendChild(row);
@@ -59,18 +59,38 @@ function newBookEntry() {
   }
 }
 
+function hideNewBookButton() {
+  let x = document.getElementById('btn');
+  if (x.style.display === "none") {
+    x.style.display = 'block';
+  } else {
+    x.style.display = 'none';
+  }
+}
+
 function deleteBook(el) {
   if(el.classList.contains('delete')) {
     el.parentElement.parentElement.remove();
   }
 }
 
-document.addEventListener('DOMContentLoaded', render());
+function updateReadStatus(el) {
+  if (el.classList.contains('delete')) {
+    el.parentElement.parentElement.remove();
+  }
+}
+
+// document.addEventListener('DOMContentLoaded', );
 
 document.addEventListener('DOMContentLoaded', () => {
+  render();
   document.getElementById('submit').addEventListener('click', addBookToLibrary);
 });
 
 document.getElementById('book-list').addEventListener('click', (e) => {
   deleteBook(e.target)
+})
+
+document.getElementById('btn').addEventListener('click', (e) => {
+  hideNewBookButton(e.target)
 }) 
