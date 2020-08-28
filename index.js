@@ -1,4 +1,11 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    title: 'Book One',
+    author: 'Samuel',
+    numPages: 200,
+    readStatus: 'read'
+  }
+];
 
 function Book(title, author, numPages, readStatus) {
   this.title = title;
@@ -8,7 +15,7 @@ function Book(title, author, numPages, readStatus) {
 }
 
 // test dynamic table
-function render(book) {
+function displayBook(book) {
   const list = document.querySelector('#book-list');
   const row = document.createElement('tr');
   row.innerHTML = `
@@ -16,8 +23,15 @@ function render(book) {
   <td>${book.author}</td>
   <td>${book.numPages}</td>
   <td>${book.readStatus}</td>
+  <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
   `;
   list.appendChild(row);
+}
+
+function render() {
+  myLibrary.forEach((book) => {
+    displayBook(book);
+  });
 }
 
 // test dynamic table
@@ -30,11 +44,33 @@ function addBookToLibrary(ev) {
   book.readStatus = document.getElementById('readStatus').value;
 
   myLibrary.push(book);
-  render(book);
+  displayBook(book);
+  
   // const pre = document.querySelector('#msg pre');
   // pre.textContent = `\n${JSON.stringify(myLibrary, '\t', 2)}`;
 }
 
+function newBookEntry() {
+  let x = document.getElementById('myForm');
+  if (x.style.display === "block") {
+    x.style.display = 'none';
+  } else {
+    x.style.display = 'block';
+  }
+}
+
+function deleteBook(el) {
+  if(el.classList.contains('delete')) {
+    el.parentElement.parentElement.remove();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', render());
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('submit').addEventListener('click', addBookToLibrary);
 });
+
+document.getElementById('book-list').addEventListener('click', (e) => {
+  deleteBook(e.target)
+}) 
