@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+  <body class="container">
+    <h1>Book Library</h1>
+    <form id="myForm">
+      <label for="title">Title</label><br />
+      <input type="text" name="title" id="title" /><br />
+      <label for="author">Author</label><br />
+      <input type="text" name="author" id="author" /><br />
+      <label for="numPages">Pages</label><br />
+      <input type="number" name="numPages" id="numPages" /><br /><br />
+      <label for="readStatus">Status</label>
+      <select name="select" id="readStatus">
+        <option value="Already Read">Already Read</option>
+        <option value="Not Read">Not Read</option></select
+      ><br /><br />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <div id="msg">
+      <pre></pre>
+    </div>
 
-<body class='container'>
-  <h1>Book Library</h1>
-  <form id='myForm'>
-    <label for="title">Title</label><br />
-    <input type="text" name="title" id="title" /><br />
-    <label for="author">Author</label><br />
-    <input type="text" name="author" id="author" /><br />
-    <label for="numPages">Pages</label><br />
-    <input type="number" name="numPages" id="numPages" /><br /><br />
-    <label for="readStatus">Status</label>
-    <select name="select" id="readStatus">
-      <option value="read">Already Read</option>
-      <option value="not-read">Not Read</option>
-    </select><br /><br />
-    <input type="submit" id="submit" value="Submit" />
-  </form>
-  <div id="msg">
-    <pre></pre>
-  </div>
+    <button class="mb-5" id="btn">New Book</button>
 
-  <button class="mb-5" id="btn" onclick="newBookEntry()">New Book</button>
+    <h2>All Books</h2>
+    <table class="table" border="1">
+      <thead>
+        <tr class="font-weight-bold">
+          <td>Title</td>
+          <td>Author</td>
+          <td>Pages</td>
+          <td>Read Status</td>
+          <td>Remove</td>
+        </tr>
+      </thead>
+      <tbody id="book-list"></tbody>
+    </table>
 
-  <h2>All Books</h2>
-  <table class="table" border="1">
-    <thead>
-      <tr class='font-weight-bold'>
-        <td>Title</td>
-        <td>Author</td>
-        <td>Pages</td>
-        <td>Read Status</td>
-        <td>Remove</td>
-      </tr>
-    </thead>
-    <tbody id="book-list"></tbody>
-  </table>
-
-  <script src="./index.js"></script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
