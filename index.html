@@ -16,18 +16,26 @@
   <body class="container">
     <h1>Book Library</h1>
     <form id="myForm">
-      <label for="title">Title</label><br />
-      <input type="text" name="title" id="title" /><br />
-      <label for="author">Author</label><br />
-      <input type="text" name="author" id="author" /><br />
-      <label for="numPages">Pages</label><br />
-      <input type="number" name="numPages" id="numPages" /><br /><br />
-      <label for="readStatus">Status</label>
-      <select name="select" id="readStatus">
-        <option value="Already Read">Already Read</option>
-        <option value="Not Read">Not Read</option></select
-      ><br /><br />
-      <input type="submit" id="submit" value="Submit" />
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="numPages">Pages</label>
+        <input type="number" name="numPages" id="numPages" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="readStatus">Status</label>
+        <select name="select" id="readStatus" class="custom-select">
+          <option value="Already Read">Already Read</option>
+          <option value="Not Read">Not Read</option>
+        </select>
+      </div>
+      <input type="submit" id="submit" value="Submit" class="btn btn-primary" />
     </form>
     <div id="msg">
       <pre></pre>
