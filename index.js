@@ -49,9 +49,6 @@ function addBookToLibrary(ev) {
 
   myLibrary.push(book);
   displayBook(book);
-
-  const pre = document.querySelector('#msg pre');
-  pre.textContent = `\n${JSON.stringify(myLibrary, '\t', 2)}`;
 }
 
 function newBookEntry() {
