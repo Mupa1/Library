@@ -1,5 +1,9 @@
 // eslint-disable-next-line import/extensions
-import { newBookButton } from './dom.js';
+import {
+  newBookButton,
+  deleteBookButton,
+  // eslint-disable-next-line import/extensions
+} from './dom.js';
 
 const myLibrary = [{
   title: 'Book One',
@@ -97,11 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
   render();
   document.getElementById('submit').addEventListener('click', addBookToLibrary);
 });
-
-document.getElementById('book-list').addEventListener('click', (e) => {
+deleteBookButton.addEventListener('click', (e) => {
   deleteBook(e.target);
 });
-
 newBookButton.addEventListener('click', (e) => {
   hideNewBookButton(e.target);
 });

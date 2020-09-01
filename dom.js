@@ -1,4 +1,7 @@
 const newBookButton = document.getElementById('btn');
-// console.log(newBookButton);
+const deleteBookButton = document.getElementById('book-list');
 
-export { newBookButton };
+export {
+  newBookButton,
+  deleteBookButton,
+};
